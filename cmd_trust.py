@@ -11,7 +11,7 @@ trusted_users_data = load_data(trusted_users_file_path)
 async def cmd_trust(ctx, target_user: str):
     global trusted_users_data
 
-    # Check if the user invoking the command is the bot owner (replace 'owner_username' with your username)
+    # Below makes it so only neek can run this command
     if ctx.author.name.lower() != 'neeeekolaz':
         return await ctx.send("You are not authorized to use this command.")
 

@@ -42,11 +42,11 @@ async def cmd_compliment(ctx, *args, compliments_file_path='C:\\Users\\neeee\\Do
                 target_user = '@neeeekolaz' if args[0] == '@' else args[0]
                 argument = ' '.join(args[1:]) if args[0] == '@' else ' '.join(args)
                 compliment_entry = random.choice(load_data(compliments_file_path))
-                await ctx.send(f"{target_user}, {compliment_entry['message']} (compliment #{compliment_entry['number']} by {compliment_entry['username']})")
+                await ctx.send(f"{target_user}, {compliment_entry['message']} (compliment #{compliment_entry['number']})")
     else:
         # Choose a random compliment from the loaded compliments and include @neeeekolaz at the beginning
         compliment_entry = random.choice(load_data(compliments_file_path))
-        await ctx.send(f"@neeeekolaz, {compliment_entry['message']} (compliment #{compliment_entry['number']} by {compliment_entry['username']})")
+        await ctx.send(f"@neeeekolaz, {compliment_entry['message']} (compliment #{compliment_entry['number']})")
 
 def prepare(bot):
     bot.add_command(cmd_compliment)

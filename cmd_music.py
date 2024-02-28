@@ -20,7 +20,7 @@ async def cmd_music(ctx, *args):
     global last_execution_times
 
     def get_script_entry(search_args):
-        # Makes search arguments look directly at 'keys'
+        # Makes search arguments look directly at 'keys' in music_paths.py
         for entry in script_paths.values():
             keys = entry.get('keys', [])
             for key in keys:
@@ -28,14 +28,15 @@ async def cmd_music(ctx, *args):
                     return entry
         return None
 
+    # !music list subcommand # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
     if args and args[0].lower() == 'list':
-        # Provide a URL in the chat for the list
         music_list_url = "http://tinyurl.com/bdhtxuwm" 
         await ctx.send(f"Here's all the music available: {music_list_url}")
         return
 
+    # !music reset subcommand # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
     if args and args[0].lower() == 'reset':
-        # names below can use this subcommand. (how tf do you restrict this by role?)
+        # only names below can use this subcommand. (how tf do you restrict this by role?)
         if ctx.author.name.lower() in ['neeeekolaz', 'moderator2', 'moderator3']:
             last_execution_times = 0
             await ctx.send("!music is ready to be swapped.")

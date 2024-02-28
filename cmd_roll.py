@@ -22,7 +22,7 @@ async def cmd_roll(ctx, arg: str):
     max_limit = 999
 
     if max_value <= 0:
-        await ctx.send("How do I roll a die with negative numbers on it?")
+        await ctx.send("@GoosetavoBot tries to roll a die with a negative number on it and explodes (input must be positive).")
         return
     elif max_value > max_limit:
         await ctx.send(f"The highest die I have is a D{max_limit}.")

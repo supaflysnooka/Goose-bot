@@ -42,11 +42,11 @@ async def cmd_insult(ctx, *args, insults_file_path='C:\\Users\\neeee\\Documents\
                 target_user = '@neeeekolaz' if args[0] == '@' else args[0]
                 argument = ' '.join(args[1:]) if args[0] == '@' else ' '.join(args)
                 insult_entry = random.choice(load_data(insults_file_path))
-                await ctx.send(f"{target_user}, {insult_entry['message']} (insult #{insult_entry['number']} by {insult_entry['username']})")
+                await ctx.send(f"{target_user}, {insult_entry['message']} (insult #{insult_entry['number']})")
     else:
         # Choose a random insult from the loaded insults and include @neeeekolaz at the beginning
         insult_entry = random.choice(load_data(insults_file_path))
-        await ctx.send(f"@neeeekolaz, {insult_entry['message']} (insult #{insult_entry['number']} by {insult_entry['username']})")
+        await ctx.send(f"@neeeekolaz, {insult_entry['message']} (insult #{insult_entry['number']})")
 
 def prepare(bot):
     bot.add_command(cmd_insult)
